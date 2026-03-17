@@ -46,9 +46,9 @@ You can find a detailed visual breakdown in [architecture.md](./architecture.md)
 ```mermaid
 graph LR
     User((User)) <--> UI[React App]
-    UI <-->|WebSocket| API[FastAPI Backend]
-    API <-->|Live API| Gemini[Gemini Multimodal Live]
-    API <-->|REST| OFF[Product APIs / Search]
+    UI <-->|Unified WebSocket| Backend[FastAPI Agent]
+    Backend <-->|Live API Session| Gemini[Gemini 2.5 Flash]
+    Backend <-->|Search Grounding| Google[Google Search Tool]
 ```
 
 ---
