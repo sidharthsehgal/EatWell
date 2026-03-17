@@ -1,8 +1,18 @@
 # EatWise AI 🥗
 
-**EatWise AI** is your personal, voice-first food safety assistant. Using the cutting-edge **Gemini Multimodal Live API**, it helps you determine if a food product is safe for you to consume based on your specific dietary restrictions, allergies, and lifestyle choices.
+**EatWise AI** is your personal, multimodal food safety assistant. Using the cutting-edge **Gemini Multimodal Live API**, it helps you determine if a food product is safe for you to consume based on your specific dietary restrictions, allergies, and lifestyle choices.
 
 Whether you're grocery shopping, dining out, or checking your pantry, EatWise AI listens, sees, and understands your needs in real-time.
+
+The agent can understand and respond to voice, images, and text. It is designed for natural conversations, can handle interruptions and limits its interactions to food safety related conversations.
+
+---
+
+## Testing instructions
+
+You can test the agent through deployed web based application at https://eatwise-frontend-477953542175.us-central1.run.app/
+
+Contact sidharth.sehgal@gmail.com if you experience any issues.
 
 ---
 
@@ -46,8 +56,8 @@ You can find a detailed visual breakdown in [architecture.md](./architecture.md)
 ```mermaid
 graph LR
     User((User)) <--> UI[React App]
-    UI <-->|Unified WebSocket| Backend[FastAPI Agent]
-    Backend <-->|Live API Session| Gemini[Gemini 2.5 Flash]
+    UI <-->|Unified WebSocket| Backend[EatWise Agent]
+    Backend <-->|Live API Session| Gemini[Gemini Live API]
     Backend <-->|Search Grounding| Google[Google Search Tool]
 ```
 
