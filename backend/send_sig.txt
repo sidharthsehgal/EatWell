@@ -1,0 +1,19 @@
+(self, input: Union[list[Union[google.genai.types.Content, list[Union[google.genai.types.Part, PIL.Image.Image, str]], google.genai.types.Part, PIL.Image.Image, str]], google.genai.types.Content, list[Union[google.genai.types.Part, PIL.Image.Image, str]], google.genai.types.Part, PIL.Image.Image, str, list[Union[google.genai.types.Content, list[Union[google.genai.types.Part, PIL.Image.Image, str]], google.genai.types.Part, PIL.Image.Image, str, google.genai.types.ContentDict]], google.genai.types.ContentDict, google.genai.types.LiveClientContent, google.genai.types.LiveClientContentDict, google.genai.types.LiveClientRealtimeInput, google.genai.types.LiveClientRealtimeInputDict, google.genai.types.LiveClientToolResponse, google.genai.types.LiveClientToolResponseDict, google.genai.types.FunctionResponse, google.genai.types.FunctionResponseDict, Sequence[Union[google.genai.types.FunctionResponse, google.genai.types.FunctionResponseDict]]], end_of_turn: Optional[bool] = False)
+---
+  async def send(
+      self,
+      input: Union[
+          types.ContentListUnion,
+          types.ContentListUnionDict,
+          types.LiveClientContentOrDict,
+          types.LiveClientRealtimeInputOrDict,
+          types.LiveClientRealtimeInputOrDict,
+          types.LiveClientToolResponseOrDict,
+          types.FunctionResponseOrDict,
+          Sequence[types.FunctionResponseOrDict],
+      ],
+      end_of_turn: Optional[bool] = False,
+  ):
+    client_message = self._parse_client_message(input, end_of_turn)
+    await self._ws.send(json.dumps(client_message))
+

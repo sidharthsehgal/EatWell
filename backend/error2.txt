@@ -1,0 +1,1 @@
+received 1008 (policy violation) models/gemini-2.0-flash-exp is not found for API version v1alpha, or is not supported for bidiGenerateContent. Call ListMod; then sent 1008 (policy violation) models/gemini-2.0-flash-exp is not found for API version v1alpha, or is not supported for bidiGenerateContent. Call ListMod
